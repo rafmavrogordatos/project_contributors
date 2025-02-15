@@ -184,13 +184,3 @@ The API uses JWT for authentication. To authenticate, you need to send a POST re
 
 
 
-## 5. User Stats Endpoints (Auth: Required)
-
-### Table of endpoints
-
-| Method | Endpoint | Description | Auth |
-| --- | --- | --- | --- |
-| GET | /user_stats/ | View user project statistics | Required |
-
-### GET /user_stats/
-- View user project statistics
