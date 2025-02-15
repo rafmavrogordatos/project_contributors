@@ -1,0 +1,760 @@
+{
+	"info": {
+		"_postman_id": "4df39952-3312-480d-a021-3d7fda7d497f",
+		"name": "Project Contributors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41967098"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "JWT Token - POST /api/token/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"dev_developer3\", \"password\": \"123123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password /users/password_reset/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john1@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/reset_password/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"reset_password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"token\": \"clai3x-7e4a952f2fd872cd338aa79f77f6203c\",\r\n  \"new_password\": \"Anmone123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/reset-password-confirm/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"reset-password-confirm",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "POST /users/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"username\": \"dev_developer33\",\r\n        \"password\": \"123123\",\r\n        \"email\": \"john11223@example.com\",\r\n        \"first_name\": \"tester\",\r\n        \"last_name\": \"tester\",\r\n        \"country\": \"GR\",\r\n        \"residence\":\"Athens\",\r\n        \"age\": 30\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /users/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "| **Endpoint** | **Method** | **Request** | **Response** |\n| --- | --- | --- | --- |\n| /api/users/ | POST | \"username\"  <br>\"password  <br>\"first_name\"  <br>\"last_name\" \"email\":  <br>\"age\"  <br>\"country\": \"residence\": | \"username\" \"first_name\"  <br>\"last_name\" \"email\":  <br>\"age\"  <br>\"country\": \"residence\": |"
+		},
+		{
+			"name": "Skills",
+			"item": [
+				{
+					"name": "GET /skills/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5Mzg5NTcyLCJpYXQiOjE3MzkzODkyNzIsImp0aSI6IjBkNzA0MzcxMjVhYjQzMWY5ZGM1N2E3NzkwNGMzZjU1IiwidXNlcl9pZCI6Mn0.aL0kotqrst1onqJnr_I2n3fv95ZHnZ9xJM7G_3I3HLU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/skills/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"skills",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /skills/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5MTE4MjEyLCJpYXQiOjE3MzkxMTc5MTIsImp0aSI6IjRiZTViZDkzMTZkOTRhNTk4YzIyMTRkMjQxZmFkOTViIiwidXNlcl9pZCI6MX0.CqPEC6M2E4NiyjTXcs73OZpNFu9Zfy3FkB69SWk4h80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"language\": \"Python\",\r\n    \"level\": \"expert\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/skills/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"skills",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /skills/options/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDAxNDcxLCJpYXQiOjE3Mzk0MDExNzEsImp0aSI6IjEzNGJlMzk4NWMwYzQxZWQ5YzFmMDhiZTliZjkwZTNjIiwidXNlcl9pZCI6M30.U97hcsIjpIRcR72ES9eooCitJEqOXYTrO32MNyZFKk0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5MTE4MjEyLCJpYXQiOjE3MzkxMTc5MTIsImp0aSI6IjRiZTViZDkzMTZkOTRhNTk4YzIyMTRkMjQxZmFkOTViIiwidXNlcl9pZCI6MX0.CqPEC6M2E4NiyjTXcs73OZpNFu9Zfy3FkB69SWk4h80",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/skills/options/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"skills",
+								"options",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "\n",
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Applications Related",
+					"item": [
+						{
+							"name": "Apply to a project - POST /projects/{project_id}/apply/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NjYxMDcwLCJpYXQiOjE3Mzk2NjA3NzAsImp0aSI6IjU5ZTgxYmViNDlkZTRiYmU4ZGEzNGQ1YzkyMDVmODEyIiwidXNlcl9pZCI6NH0.iS5SkpQRgNKh19-CbYGbQUm8HGnuJFXbW-nTXHL2UKs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"message\": \"I would love to join this project!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/projects/2/apply/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"projects",
+										"2",
+										"apply",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Manage Applications - GET",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDAwNzQyLCJpYXQiOjE3Mzk0MDA0NDIsImp0aSI6IjdjY2UxNWJjZDQxZjQ4Nzg5YmE1MWFjOWVmNWQ1MDY0IiwidXNlcl9pZCI6MX0.J0Yh5NsxDZmi2lIwAmP1MCOkUG-mPdocjSWy7BBmI0A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/projects/1/applications/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"projects",
+										"1",
+										"applications",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET /projects/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDAxMDIxLCJpYXQiOjE3Mzk0MDA3MjEsImp0aSI6ImNmMWIyNDZiZTE2MzRiZjdhNjRhYTFlNjUxODQzYzQ5IiwidXNlcl9pZCI6MX0.5b4J48g_GzsAwhMODYKj7cODKA8NALBhzXroOmiUoec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/projects/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /projects/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDQ3ODMzLCJpYXQiOjE3Mzk0NDc1MzMsImp0aSI6IjkyZjNjMDIxMDI1ZTQ2YzdiNjIyNDU1YjU1MTAzNjZhIiwidXNlcl9pZCI6M30.D05iJklGwUuxOFLkj-mi_r24H_EPuZ2FSh8A4j1X23A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_name\": \"New Project 1\",\r\n    \"description\": \"A project about REST.\",\r\n    \"max_collaborators\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/projects/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get project details - GET /projects/{project_id}/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5MzkyODk2LCJpYXQiOjE3MzkzOTI1OTYsImp0aSI6ImZiNGI2N2Y3NGE4YTQyODliMTQzNjNlNjVmZTI2M2JiIiwidXNlcl9pZCI6M30.rZDiOvUfPTNualGY93A4pdtcVFnU7xB-3QuHqV0XUJg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/projects/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the collaborators of a project - GET /projects/{project_id}/collaborators",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDAxMTU3LCJpYXQiOjE3Mzk0MDA4NTcsImp0aSI6IjRjZTExM2Q1Mzg2MDRkNmFhNzU5YjEyMWNjMWQ5NmQzIiwidXNlcl9pZCI6M30.D1tELV9uUWCAefsKy_yGYGdXEUqaWY2dn7DwK09LW-c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/collaborators",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"collaborators"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List projects with available slots - GET /open_projects/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/projects/open_projects/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"open_projects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user stats - GET /projects/user_stats/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/projects/user_stats/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"user_stats",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "Accept/Decline Applications",
+					"item": [
+						{
+							"name": "Accept Application - POST /applications/{application_id}/accept",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5NDAwNzQyLCJpYXQiOjE3Mzk0MDA0NDIsImp0aSI6IjdjY2UxNWJjZDQxZjQ4Nzg5YmE1MWFjOWVmNWQ1MDY0IiwidXNlcl9pZCI6MX0.J0Yh5NsxDZmi2lIwAmP1MCOkUG-mPdocjSWy7BBmI0A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/applications/2/accept/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"applications",
+										"2",
+										"accept",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Decline Application - POST /applications/{application_id}/decline",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/applications/2/decline/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"applications",
+										"2",
+										"decline",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET /applications/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5MzkxNzkwLCJpYXQiOjE3MzkzOTE0OTAsImp0aSI6ImJkNjVjOTcxYWRiNjRjYjg4YzM3ODkyNWZjMmJlYWEzIiwidXNlcl9pZCI6M30.UNYRAwkW0gzThPEqAxUnaYlqczsCnBL75NuPgTtDEc8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/applications/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"applications",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
