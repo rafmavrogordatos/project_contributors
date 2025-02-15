@@ -182,5 +182,3 @@ The API uses JWT for authentication. To authenticate, you need to send a POST re
 ### POST /applications/{id}/decline/
 - Decline application (Only by project creator)
 
-
-
