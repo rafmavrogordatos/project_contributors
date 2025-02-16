@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from .models import Skill, Project, Application, Collaborator
 from django.contrib.auth.password_validation import validate_password
-from django.utils import timezone
+
 User = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
