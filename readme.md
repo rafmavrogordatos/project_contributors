@@ -18,8 +18,8 @@
 3. Migrations
 	```bash
 
-	python manage.py makemigrations
-	python manage.py migrate
+	python manage.py makemigrations api 
+	python manage.py migrate 
 	```
 
 4. Run the server
