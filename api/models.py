@@ -2,22 +2,6 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
-LEVELS = [
-        ('beginner', 'Beginner'),
-        ('experienced', 'Experienced'),
-        ('expert', 'Expert')
-    ]
-
-LANGUAGES = [
-        ('C++', 'C++'),
-        ('Javascript', 'Javascript'),
-        ('Python', 'Python'),
-        ('Java', 'Java'),
-        ('Lua', 'Lua'),
-        ('Rust', 'Rust'),
-        ('Go', 'Go'),
-        ('Julia', 'Julia')
-    ]
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, username, email, password=None, **extra_fields):
