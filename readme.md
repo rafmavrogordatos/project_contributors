@@ -34,7 +34,7 @@
   python manage.py test
   ```
 
-You can check my Postman collection [here](https://www.getpostman.com/collections/7) to test the API.
+You can check my Postman collection attached to this project to test the API.
 
 ## Authentication
 The API uses JWT for authentication. To authenticate, you need to send a POST request to the `/api/token/` endpoint with the username and password in the request body. The API will return a token that you can use to authenticate subsequent requests.
