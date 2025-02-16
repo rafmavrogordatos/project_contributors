@@ -85,8 +85,6 @@ class SkillViewSet(viewsets.ModelViewSet):
         return Skill.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
-        if Skill.objects.filter(user=self.request.user).count() >= 3:
-            raise PermissionDenied("You can only add up to 3 skills.")
         serializer.save(user=self.request.user)
 
     def destroy(self, request, *args, **kwargs):
